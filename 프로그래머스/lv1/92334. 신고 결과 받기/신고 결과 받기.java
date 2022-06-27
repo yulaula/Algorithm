@@ -20,12 +20,13 @@ class Solution {
             String tmp = it.next();
             arr[i] = tmp.split(" ");
         }
+        
         for(String s : id_list) {
             reportMap.put(s, new ArrayList<>());
             resultMap.put(s, 0);
         }
         
-        // key 신고당한 사람 , value 신고한 사람 리스트
+        // key 신고당한 사람, value 신고한 사람 리스트
         for(int i = 0; i < arr.length; i++) {
             if(reportMap.containsKey(arr[i][1])) {
                 reportMap.get(arr[i][1]).add(arr[i][0]);
