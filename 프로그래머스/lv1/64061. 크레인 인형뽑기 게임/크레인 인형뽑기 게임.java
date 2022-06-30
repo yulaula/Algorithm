@@ -8,16 +8,17 @@ class Solution {
         
         for(int i = 0; i < moves.length; i++) {
             int y = moves[i]-1;
-            if(board[len][y] == 0) continue;
-            for(int x = 0; x < board.length; x++) {
+            if(board[len][y] == 0) continue; // 인형이 모두 없는 칸
+            for(int x = 0; x < board.length; x++) { // 인형 있는 칸이 나올 때까지
                 if(board[x][y] == 0) continue;
                 else {
                     tmp = board[x][y];
-                    board[x][y] = 0;
-                    //System.out.println(x + " " + y + " " + tmp);
+                    board[x][y] = 0; // 인형 뽑음
                     break;
                 }
             }
+            
+            // stack으로
             if(s.isEmpty()) {
                 s.push(tmp);
             } else {
@@ -30,7 +31,6 @@ class Solution {
                 }
             }
         }
-        
         
         return answer;
     }
