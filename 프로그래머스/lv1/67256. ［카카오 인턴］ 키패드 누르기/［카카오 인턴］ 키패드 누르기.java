@@ -1,12 +1,11 @@
 class Solution {
     public int checkDistance(int number, int cur) {
-        int numberX = (number-1)/3;
-        int numberY = (number-1)%3;
-        int curX = (cur-1)/3;
-        int curY = (cur-1)%3;
-        System.out.println(number+ " " + cur);
+        int numberX = (number-1)/3; // 누를 키패드 X 좌표
+        int numberY = (number-1)%3; // 누를 키패드 Y 좌표
+        int curX = (cur-1)/3; // 현재 키패드 X 좌표
+        int curY = (cur-1)%3; // 누를 키패드 Y 좌표
         
-        return Math.abs(numberX-curX) + Math.abs(numberY-curY);
+        return Math.abs(numberX-curX) + Math.abs(numberY-curY); // 거리 계산
     }
     public String solution(int[] numbers, String hand) {
         String answer = "";
@@ -44,7 +43,6 @@ class Solution {
                     curLen = number;
                 }
             }
-            //System.out.println(number + " " + answer);
         }        
         return answer;
     }
