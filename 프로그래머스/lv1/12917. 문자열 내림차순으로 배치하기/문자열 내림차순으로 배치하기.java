@@ -8,8 +8,11 @@ class Solution {
         }
         Arrays.sort(arr, Collections.reverseOrder());
         
-        String answer = String.join("", arr);
-                
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < arr.length; i++) {
+            sb.append(arr[i]);
+        }
+        String answer = sb.toString();
         return answer;
     }
 }
