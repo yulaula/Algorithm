@@ -1,4 +1,4 @@
-# [Silver V] 30 - 10610 
+# [Silver IV] 30 - 10610 
 
 [문제 링크](https://www.acmicpc.net/problem/10610) 
 
