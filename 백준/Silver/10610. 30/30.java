@@ -1,6 +1,7 @@
 import java.util.*;
 import java.io.*;
 
+/* 30 */
 public class Main {
 
     public static void main(String[] args) throws IOException{
@@ -25,6 +26,7 @@ public class Main {
         } else {
             System.out.println(-1);
         }
+
+        br.close();
     }
-    
 }
