@@ -1,50 +1,55 @@
 import java.util.*;
+import java.io.*;
+
 public class Main {
-    static int T, N;
-    static List<Grade> list; 
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        T = sc.nextInt();
-        
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
+        StringTokenizer st;
+
         for(int i = 0; i < T; i++) {
-            N = sc.nextInt();
-            list = new ArrayList<Grade>();
-            
+            int N = Integer.parseInt(br.readLine());
+            ArrayList<Grade> list = new ArrayList<>();
             for(int j = 0; j < N; j++) {
-                int docu = sc.nextInt();
-                int inte = sc.nextInt();
-                list.add(new Grade(docu, inte));
+                st = new StringTokenizer(br.readLine());
+
+                int doc = Integer.parseInt(st.nextToken());
+                int itv = Integer.parseInt(st.nextToken());
+
+                list.add(new Grade(doc, itv));
             }
-            Collections.sort(list);
-            
-            int ans = 1;
-            int inteHigh = list.get(0).i;
-            
-            for(int j = 1; j < N; j++) {
-                Grade ap = list.get(j);
-                if(inteHigh > ap.i) {
-                    ans++;
-                    inteHigh = ap.i;
+
+            Collections.sort(list); // 서류 등수 순으로 정렬
+
+            int result = 1; // 1등 확보
+            int itvTmp = list.get(0).itv;
+
+            for(int j = 1;  j < N; j++) {
+                Grade g = list.get(j);
+                if(itvTmp > g.itv) { // 면접 순위가 더 높으면
+                    result++;
+                    itvTmp = g.itv;
                 }
             }
-            System.out.println(ans);
-        }
-        
-    }
-    static class Grade implements Comparable<Grade> {
-        int d;
-        int i;
-        public Grade(int d, int i) {
-            this.d = d;
-            this.i = i;
-        }
-        @Override
-        public int compareTo(Grade g) {
-            if(this.d > g.d) {
-                return 1;
-            } else {
-                return -1;
-            }
+            System.out.println(result);
         }
     }
+}
+
+class Grade implements Comparable<Grade> {
+    int doc;
+    int itv;
+    public Grade(int doc, int itv) {
+        this.doc = doc;
+        this.itv = itv;
+    }
+
+    @Override
+    public int compareTo(Grade o) {
+        if(this.doc > o.doc) {
+            return 1;
+        } else {
+            return -1;
+        }
+    } 
 }
