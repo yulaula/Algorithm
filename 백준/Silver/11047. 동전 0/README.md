@@ -1,10 +1,10 @@
-# [Silver III] 동전 0 - 11047 
+# [Silver IV] 동전 0 - 11047 
 
 [문제 링크](https://www.acmicpc.net/problem/11047) 
 
 ### 성능 요약
 
-메모리: 17732 KB, 시간: 212 ms
+메모리: 14180 KB, 시간: 132 ms
 
 ### 분류
 
