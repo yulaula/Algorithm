@@ -12,8 +12,8 @@ public class Main
         
         for(int i = 0; i < nums.length; i++) {
             //System.out.print(nums[i]+" ");
-            int num = Character.getNumericValue(nums[i]);
-            result += num;
+            //int num = Character.getNumericValue(nums[i]);
+            result += (nums[i] - '0');
         }
         
         System.out.println(result);
